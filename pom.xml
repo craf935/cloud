@@ -35,7 +35,7 @@
 						<muleVersion>4.4.0</muleVersion>
 						<username>amir777</username>
 						<password>Amir122306</password>
-						<applicationName>jenkins-with-mule1</applicationName>
+						<applicationName>cloude</applicationName>
 						<environment>Sandbox</environment>
 						<workerType>MICRO</workerType>
 						<objectStoreV2>true</objectStoreV2>
