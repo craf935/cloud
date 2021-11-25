@@ -4,7 +4,7 @@ pipeline
    stages{
      stage('build Application'){
      steps{
-     bat 'mvn clean install'
+     bat 'mvn compile'
      }
      }
      stage('munit testing'){
