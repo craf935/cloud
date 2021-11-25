@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
-	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xsi:schemaLocation="
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:munit="http://www.mulesoft.org/schema/mule/munit"
+	xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xsi:schemaLocation="
 		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
-		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
 	<munit:config name="jenkins-with-mule-test-suite.xml" />
 	<munit:test name="jenkins-with-mule-test-suite-jenkins-with-muleFlowTest" doc:id="2c22c829-2b4b-4a2a-bf18-70843b799c76" description="Test">
-		<munit:execution >
-			<flow-ref doc:name="Flow-ref to jenkins-with-muleFlow" doc:id="1ea66735-563e-469d-b1a6-6029d9eccfaf" name="jenkins-with-muleFlow"/>
+		<munit:execution>
+			<http:request method="GET" doc:name="Request" doc:id="2e6e937d-4b4f-4ea2-9839-becf3711b7d5" url="http://localhost:8081/cloud1">
+				<http:body ><![CDATA[#["hi mule soft student"]]]></http:body>
+			</http:request>
+
 		</munit:execution>
-		<munit:validation >
-			<munit-tools:assert-equals doc:name="Assert equals" doc:id="f3cd3070-463a-43df-bc78-6e13daba3f53" actual='#[payload]' expected='#["hi mule soft student"]'/>
+		<munit:validation>
+			<munit-tools:assert-equals doc:name="Assert equals" doc:id="f3cd3070-463a-43df-bc78-6e13daba3f53" actual="#[payload]" expected='#["hi mule soft student"]' />
+
 		</munit:validation>
-	</munit:test>
+	
+</munit:test>
 
 
 </mule>
