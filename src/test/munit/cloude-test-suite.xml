@@ -11,7 +11,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<munit:config name="jenkins-with-mule-test-suite.xml" />
 	<munit:test name="jenkins-with-mule-test-suite-jenkins-with-muleFlowTest" doc:id="2c22c829-2b4b-4a2a-bf18-70843b799c76" description="Test">
 		<munit:execution>
-			<http:request method="GET" doc:name="Request" doc:id="2e6e937d-4b4f-4ea2-9839-becf3711b7d5" url="http://localhost:8081/cloud1">
+			<http:request method="GET" doc:name="Request" doc:id="2e6e937d-4b4f-4ea2-9839-becf3711b7d5" url="http://localhost:8081/cloud2">
 				<http:body ><![CDATA[#["hi mule soft student"]]]></http:body>
 			</http:request>
 
