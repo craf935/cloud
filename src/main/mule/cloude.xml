@@ -10,6 +10,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<configuration-properties doc:name="Configuration properties" doc:id="522cb657-7f5e-47c9-999c-a0b26264436b" file="dev.yaml" />
 	<flow name="jenkins-with-muleFlow" doc:id="e87a4417-0346-4c90-b6db-369e70a36c7e" >
 		<http:listener doc:name="Listener" doc:id="39691b7a-00cd-420a-951f-c88b2021fa35" config-ref="HTTP_Listener_config" path="/cloud1"/>
-		<set-payload value='#["hi mule soft student"]' doc:name="Set Payload" doc:id="8eeae875-846a-4e09-a3d7-8ab8ee76bbbe" />
+		<set-payload value='#[payload]' doc:name="Set Payload" doc:id="8eeae875-846a-4e09-a3d7-8ab8ee76bbbe" />
 	</flow>
 </mule>
