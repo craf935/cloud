@@ -13,7 +13,7 @@
 			<flow-ref doc:name="Flow-ref to jenkins-with-muleFlow" doc:id="1ea66735-563e-469d-b1a6-6029d9eccfaf" name="jenkins-with-muleFlow"/>
 		</munit:execution>
 		<munit:validation >
-			<munit-tools:assert-that doc:name="Assert that" doc:id="e3c8fccc-de82-4026-9ad2-5ec33158487e" is="#[MunitTools::notNullValue()]" expression="#[payload]"/>
+			<munit-tools:assert-that doc:name="Assert that" doc:id="e3c8fccc-de82-4026-9ad2-5ec33158487e" is="#[MunitTools::nullValue()]" expression="#[payload]"/>
 		</munit:validation>
 	</munit:test>
 
